@@ -118,7 +118,7 @@ TOKEN :
 
 TOKEN :
 {
-  < NAME: ["a"-"z", "A"-"Z", "_"] (["a"-"z", "A"-"Z", "_", "0"-"9"])* >
+  < NAME: ["a"-"z", "A"-"Z", "_", ""-"￿"] (["a"-"z", "A"-"Z", "_", "0"-"9", ""-"￿"])* >
 | < NUMBER: <HEX> | <FLOAT> >
 | < #FLOAT: <FNUM> (<EXP>)? >
 | < #FNUM: (<DIGIT>)+ "." (<DIGIT>)* | "." (<DIGIT>)+ | (<DIGIT>)+ >

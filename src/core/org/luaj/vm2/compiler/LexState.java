@@ -175,16 +175,19 @@ public class LexState extends Constants {
 	}
 
 	private boolean isalnum(int c) {
-		return (c >= '0' && c <= '9')
-			|| (c >= 'a' && c <= 'z')
-			|| (c >= 'A' && c <= 'Z')
-			|| (c == '_');
-		// return Character.isLetterOrDigit(c);
+		return isIdentifierPart(c);
 	}
-	
+
 	private boolean isalpha(int c) {
-		return (c >= 'a' && c <= 'z')
-			|| (c >= 'A' && c <= 'Z');
+		return isIdentifierStart(c);
+	}
+
+	private boolean isIdentifierStart(int c) {
+		return c == '_' || Character.isUnicodeIdentifierStart(c);
+	}
+
+	private boolean isIdentifierPart(int c) {
+		return c == '_' || Character.isUnicodeIdentifierPart(c);
 	}
 	
 	private boolean isdigit(int c) {
